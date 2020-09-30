@@ -1,4 +1,5 @@
 {
+  "homepage": "http://rashed2155.github.io/amazona",
   "name": "amazona",
   "version": "1.0.0",
   "description": "Demo : https://amazonaapp.herokuapp.com/",
@@ -29,7 +30,9 @@
   "scripts": {
     "start": "nodemon --watch backend --exec babel-node backend/server.js",
     "build": "rm -rf dist && babel backend -d dist  && cd frontend && npm install && npm run build",
-    "heroku-postbuild-x": "npm run build && cd frontend && npm install && npm run build"
+    "heroku-postbuild-x": "npm run build && cd frontend && npm install && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
